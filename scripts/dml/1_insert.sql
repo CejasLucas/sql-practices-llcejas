@@ -1,9 +1,8 @@
-USE PortFleetDB;
-GO
+USE MaritimeLogisticsDB; -- Verficar la conexión
+GO 
 
 SELECT name AS Tabla, create_date AS FechaCreacion
-FROM sys.tables
-ORDER BY name;
+FROM sys.tables ORDER BY name;
 
 INSERT INTO SHIP (name_or_nickname, registration_number, start_of_activity, origin_city, nationality) VALUES
 ('South Sea', 'AR-MDS-4512', '2010-03-12', 'Mar del Plata', 'Argentina'),
@@ -55,7 +54,7 @@ INSERT INTO SHIP (name_or_nickname, registration_number, start_of_activity, orig
 ('Southern Aurora', 'AR-ADS-9288', '2013-06-15', 'Río Gallegos', 'Argentina'),
 ('Emerald Voyager', 'IE-EMV-6201', '2015-12-19', 'Dublin', 'Ireland'),
 ('Northern Aurora', 'RU-NAR-5821', '2010-05-12', 'Saint Petersburg', 'Russia'),
-('Atlantic Voyager', 'US-ATV-9034', '2005-12-11', 'Miami', 'United States')
+('Atlantic Voyager', 'US-ATV-9034', '2005-12-11', 'Miami', 'United States'),
 ('Ocean Breeze', 'US-OBR-1120', '2011-06-14', 'New York', 'United States'),
 ('Mar del Sol', 'AR-MDS-2201', '2009-09-09', 'Mar del Plata', 'Argentina'),
 ('Pacific Dream', 'CL-PDR-3302', '2015-03-22', 'Valparaíso', 'Chile'),
@@ -159,7 +158,57 @@ INSERT INTO CREW_MEMBER (first_name, last_name, email, passport_number, home_cit
 ('Jonas', 'Berg', 'jonas.berg@hotmail.com', 'FI2299811', 'Turku', 'Finland', '1983-02-28', '2008-03-17'),
 ('Clara', 'Müller', 'clara.muller@yahoo.com', 'DE5599123', 'Frankfurt', 'Germany', '1992-07-30', '2020-02-25'),
 ('Sofia', 'Kovalenko', 'sof.kovalenko@gmail.com', 'UK5599123', 'Crimea', 'Ukraine', '1990-05-30', '2021-07-25'),
-('Marya', 'Putin', 'marya.putin@yahoo.com', 'RS5599123', 'Saint Petersburg', 'Russia', '1990-05-30', '2021-07-25');
+('Marya', 'Putin', 'marya.putin@yahoo.com', 'RS5599123', 'Saint Petersburg', 'Russia', '1990-05-30', '2021-07-25'),
+('Andrei', 'Volkov', 'andrei.volkov@gmail.com', 'RU8822011', 'Moscow', 'Russia', '1984-02-14', '2011-06-01'),
+('Lucia', 'Rinaldi', 'lucia.rinaldi@hotmail.com', 'IT5512234', 'Rome', 'Italy', '1989-09-03', '2016-03-12'),
+('Owen', 'Anderson', 'owen.anderson@yahoo.com', 'US7732001', 'Chicago', 'United States', '1992-07-05', '2020-10-08'),
+('Marcos', 'Vega', 'marcos.vega@gmail.com', 'AR6629011', 'Córdoba', 'Argentina', '1987-11-27', '2015-05-15'),
+('Helena', 'Nowak', 'helena.nowak@outlook.com', 'PL3398211', 'Warsaw', 'Poland', '1986-03-18', '2014-02-22'),
+('Takeshi', 'Sato', 'takeshi.sato@yahoo.com', 'JP5521900', 'Tokyo', 'Japan', '1985-10-09', '2012-11-30'),
+('Zara', 'Hussein', 'zara.hussein@gmail.com', 'AE6617732', 'Abu Dhabi', 'UAE', '1993-08-11', '2021-02-01'),
+('Milan', 'Kovacs', 'milan.kovacs@hotmail.com', 'HU4490122', 'Budapest', 'Hungary', '1988-01-16', '2016-09-09'),
+('Erik', 'Hansen', 'erik.hansen@gmail.com', 'DK3327199', 'Copenhagen', 'Denmark', '1987-05-03', '2013-10-25'),
+('Sienna', 'Clark', 'sienna.clark@yahoo.com', 'UK9182231', 'Bristol', 'United Kingdom', '1994-06-20', '2022-01-14'),
+('Raul', 'Sanchez', 'raul.sanchez@gmail.com', 'MX5519923', 'Puebla', 'Mexico', '1989-02-07', '2017-08-17'),
+('Viktoria', 'Schmidt', 'viktoria.schmidt@outlook.com', 'DE2288112', 'Munich', 'Germany', '1984-09-25', '2009-12-01'),
+('Kai', 'Nakamura', 'kai.nakamura@gmail.com', 'JP7723109', 'Nagoya', 'Japan', '1986-12-09', '2014-04-11'),
+('Marek', 'Novak', 'marek.novak@yahoo.com', 'CZ5518733', 'Prague', 'Czech Republic', '1985-04-14', '2011-07-29'),
+('Fatima', 'Rahman', 'fatima.rahman@gmail.com', 'SA7782301', 'Jeddah', 'Saudi Arabia', '1991-01-03', '2019-06-18'),
+('Jon', 'Gudmundsson', 'jon.gudmundsson@hotmail.com', 'IS9982210', 'Reykjavik', 'Iceland', '1988-08-02', '2016-05-22'),
+('Alexis', 'Moreau', 'alexis.moreau@gmail.com', 'FR6612099', 'Lyon', 'France', '1987-10-15', '2012-02-27'),
+('Pedro', 'Gomez', 'pedro.gomez@yahoo.com', 'CO4499321', 'Bogotá', 'Colombia', '1990-02-22', '2014-04-15'),
+('Yu', 'Xiang', 'yu.xiang@gmail.com', 'CN8834200', 'Beijing', 'China', '1984-06-17', '2009-08-30'),
+('Natalie', 'Brown', 'natalie.brown@outlook.com', 'US7723410', 'Phoenix', 'United States', '1993-03-12', '2021-09-09'),
+('Leo', 'Silva', 'leo.silva@gmail.com', 'BR6623011', 'Brasilia', 'Brazil', '1989-07-27', '2018-11-18'),
+('Stella', 'Kaur', 'stella.kaur@hotmail.com', 'IN5519322', 'Mumbai', 'India', '1992-10-10', '2020-03-11'),
+('Elias', 'Johannson', 'elias.johannson@gmail.com', 'SE8812233', 'Stockholm', 'Sweden', '1986-05-06', '2013-12-14'),
+('Marco', 'Delgado', 'marco.delgado@yahoo.com', 'PE9932101', 'Lima', 'Peru', '1988-12-29', '2015-03-20'),
+('Nadia', 'Popescu', 'nadia.popescu@gmail.com', 'RO5518233', 'Bucharest', 'Romania', '1990-11-11', '2019-01-03'),
+('George', 'Andrews', 'george.andrews@hotmail.com', 'US2201933', 'Atlanta', 'United States', '1984-04-04', '2010-07-21'),
+('Santiago', 'Lopez', 'santiago.lopez@gmail.com', 'AR3340211', 'Mendoza', 'Argentina', '1989-06-26', '2016-06-10'),
+('Lina', 'Harto', 'lina.harto@outlook.com', 'ID6634201', 'Jakarta', 'Indonesia', '1993-08-08', '2020-04-19'),
+('Tomás', 'Esposito', 'tomas.esposito@gmail.com', 'UY2298121', 'Punta del Este', 'Uruguay', '1985-01-01', '2012-03-11'),
+('Daniela', 'Mendez', 'daniela.mendez@yahoo.com', 'CL5539120', 'Santiago', 'Chile', '1991-09-23', '2020-08-28'),
+('Hassan', 'Mansour', 'hassan.mansour@gmail.com', 'EG8899124', 'Cairo', 'Egypt', '1986-07-19', '2013-10-17'),
+('Sven', 'Karlsen', 'sven.karlsen@hotmail.com', 'NO5518823', 'Oslo', 'Norway', '1984-02-22', '2009-05-29'),
+('Olivia', 'Scott', 'olivia.scott@gmail.com', 'US7723491', 'Denver', 'United States', '1992-05-15', '2021-11-19'),
+('Henrik', 'Olsen', 'henrik.olsen@yahoo.com', 'DK5523108', 'Odense', 'Denmark', '1987-11-01', '2014-02-15'),
+('Gianna', 'Conti', 'gianna.conti@hotmail.com', 'IT2299182', 'Milan', 'Italy', '1988-03-18', '2017-04-07'),
+('Matej', 'Horvat', 'matej.horvat@gmail.com', 'HR7732019', 'Zagreb', 'Croatia', '1985-09-09', '2011-06-06'),
+('Lars', 'Nyström', 'lars.nystrom@outlook.com', 'SE6620112', 'Malmö', 'Sweden', '1987-08-14', '2015-12-01'),
+('Sara', 'Jiménez', 'sara.jimenez@gmail.com', 'ES4419122', 'Madrid', 'Spain', '1991-03-04', '2018-01-26'),
+('Ivan', 'Petrov', 'ivan.petrov@yahoo.com', 'RU5598102', 'Kazan', 'Russia', '1983-12-12', '2009-11-02'),
+('Nicole', 'Parker', 'nicole.parker@gmail.com', 'CA7732002', 'Toronto', 'Canada', '1989-04-08', '2016-05-12'),
+('Jamal', 'Adeyemi', 'jamal.adeyemi@hotmail.com', 'NG6624091', 'Lagos', 'Nigeria', '1986-06-19', '2013-09-09'),
+('Hiro', 'Kobayashi', 'hiro.kobayashi@gmail.com', 'JP5520993', 'Kyoto', 'Japan', '1988-10-27', '2016-01-06'),
+('Laura', 'Keller', 'laura.keller@outlook.com', 'DE8821102', 'Frankfurt', 'Germany', '1987-07-11', '2014-06-04'),
+('Mohamed', 'Khaled', 'mohamed.khaled@gmail.com', 'AE9932100', 'Dubai', 'UAE', '1985-01-20', '2011-03-10'),
+('Paula', 'Serra', 'paula.serra@yahoo.com', 'PT4422011', 'Lisbon', 'Portugal', '1992-02-24', '2020-10-14'),
+('Andrés', 'Lugo', 'andres.lugo@gmail.com', 'VE9932001', 'Caracas', 'Venezuela', '1989-05-02', '2017-07-07'),
+('Riko', 'Fujimoto', 'riko.fujimoto@hotmail.com', 'JP6612983', 'Osaka', 'Japan', '1990-12-05', '2018-08-27'),
+('Adriana', 'Costa', 'adriana.costa@gmail.com', 'BR5521109', 'Salvador', 'Brazil', '1988-01-15', '2015-09-19'),
+('Lucas', 'Cejas', 'llcejas@gmail.com', 'AR8722011', 'San Martin', 'Argentina', '2002-06-18', '2021-06-01'),
+('Brisa', 'Diaz', 'ba.diaz@hotmail.com', 'BR5512234', 'Santos', 'Brazil', '2003-01-10', '2023-03-12');
 
 
 
@@ -197,7 +246,7 @@ INSERT INTO HARBOR (name, region, city, country, port_type) VALUES
 ('Port of Mumbai', 'Maharashtra', 'Mumbai', 'India', 'DAY'),
 ('Port of Dublin', 'Leinster', 'Dublin', 'Ireland', 'NIGHT'),
 ('Port of Helsinki', 'Uusimaa', 'Helsinki', 'Finland', 'DAY'),
-('Port of Casablanca', 'Casablanca-Settat', 'Casablanca', 'Morocco', 'NIGHT')
+('Port of Casablanca', 'Casablanca-Settat', 'Casablanca', 'Morocco', 'NIGHT'),
 ('Port of New York', 'New York State', 'New York', 'United States', 'DAY'),
 ('Port of Los Angeles', 'California', 'Los Angeles', 'United States', 'NIGHT'),
 ('Port of Antwerp', 'Flanders', 'Antwerp', 'Belgium', 'DAY'),
@@ -366,10 +415,17 @@ INSERT INTO HARBORS_IN_ITINERARIES (harbor_id, itinerary_id) VALUES
 
 -- Verification Of Elements
 SELECT * FROM SHIP;
+
 SELECT * FROM CREW_MEMBER;
+
 SELECT * FROM POSITION;
+
 SELECT * FROM ITINERARY;
+
 SELECT * FROM HARBOR;
+
 SELECT * FROM CREW_ASSIGNMENTS_TO_SHIPS;
+
 SELECT * FROM SHIPS_IN_ITINERARIES;
+
 SELECT * FROM HARBORS_IN_ITINERARIES;

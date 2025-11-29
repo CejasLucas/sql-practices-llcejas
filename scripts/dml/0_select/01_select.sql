@@ -1,14 +1,27 @@
 /*=========================================================
 						SELECT
 =========================================================*/
+USE MaritimeLogisticsDB; -- Verficar la conexión
+GO
+
+SELECT name AS Tabla, create_date AS FechaCreacion
+FROM sys.tables ORDER BY name;
+
 SELECT * FROM SHIP;
-SELECT * FROM CREW_MEMBER;
+
 SELECT * FROM POSITION;
-SELECT * FROM CREW_ASSIGNMENTS_TO_SHIPS;
-SELECT * FROM SHIPS_IN_ITINERARIES;
-SELECT * FROM ITINERARY;
+
+SELECT * FROM CREW_MEMBER;
+
 SELECT * FROM HARBOR;
+
+SELECT * FROM ITINERARY;
+
+SELECT * FROM SHIPS_IN_ITINERARIES;
+
 SELECT * FROM HARBORS_IN_ITINERARIES;
+
+SELECT * FROM CREW_ASSIGNMENTS_TO_SHIPS;
 
 
 -- 1. Obtener los nombres de todos los barcos registrados.  

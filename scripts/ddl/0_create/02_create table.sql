@@ -2,6 +2,13 @@
   📅 Create TABLES
 ================================================*/
 
+USE MaritimeLogisticsDB; -- Verficar la conexión
+GO
+
+SELECT name AS Tabla, create_date AS FechaCreacion
+FROM sys.tables ORDER BY name;
+
+
 -- Tabla para POSITION  
 CREATE TABLE POSITION (
     position_id INT IDENTITY(1,1) PRIMARY KEY,
@@ -82,12 +89,20 @@ CREATE TABLE HARBORS_IN_ITINERARIES (
     CONSTRAINT FK_HARBOR_ITINERARY_ITINERARY FOREIGN KEY (itinerary_id) REFERENCES ITINERARY(itinerary_id)
 );
 
+
 -- Verification Of Elements
 SELECT * FROM SHIP;
+
 SELECT * FROM CREW_MEMBER;
+
 SELECT * FROM POSITION;
+
 SELECT * FROM ITINERARY;
+
 SELECT * FROM HARBOR;
+
 SELECT * FROM CREW_ASSIGNMENTS_TO_SHIPS;
+
 SELECT * FROM SHIPS_IN_ITINERARIES;
+
 SELECT * FROM HARBORS_IN_ITINERARIES;

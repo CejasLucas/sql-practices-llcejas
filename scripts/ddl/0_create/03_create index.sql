@@ -2,6 +2,12 @@
   ⚡ Create INDEX
 ================================================*/
 
+USE MaritimeLogisticsDB; -- Verficar la conexión
+GO
+
+SELECT name AS Tabla, create_date AS FechaCreacion
+FROM sys.tables ORDER BY name;
+
 -- Índices para SHIP
 CREATE INDEX IX_SHIP_registration_number ON SHIP(registration_number);
 

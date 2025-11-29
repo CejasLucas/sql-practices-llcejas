@@ -1,5 +1,8 @@
-USE PortFleetDB;
+USE MaritimeLogisticsDB; -- Verficar la conexión
 GO
+
+SELECT name AS Tabla, create_date AS FechaCreacion
+FROM sys.tables ORDER BY name;
 
 IF OBJECT_ID('dbo.SHIPS_IN_ITINERARIES') IS NOT NULL
 BEGIN

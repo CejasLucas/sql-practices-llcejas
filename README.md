@@ -100,7 +100,8 @@ Asegúrate de cumplir con los siguientes requisitos previos: Tener instalado Git
 # 🗂️ Estructura del proyecto
 La estructura del proyecto permite trabajar con SQL de forma ordenada y progresiva. En docs/ se concentra toda la información previa al desarrollo (teoría, requisitos y modelos), lo que asegura un diseño correcto antes de escribir código. En scripts/ se separan claramente los archivos según su propósito: DDL para crear y modificar la estructura, DML para manipular datos y featured para funciones avanzadas. Esta organización facilita entender cada etapa del proceso y ejecutar los scripts en el orden adecuado, manteniendo el proyecto claro y fácil de mantener.
 
-``` json
+``` bash
+    
     SQL-PRACTICES-LLCEJAS/
     ├── docs/
     │   ├── 0_basic theory about SQL.md
